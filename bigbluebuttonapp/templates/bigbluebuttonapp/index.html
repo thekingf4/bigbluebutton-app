@@ -12,10 +12,10 @@
 <div class="bbb-integration outline-none">
     <main id="main" aria-label="Content" tabindex="-1" class="outline-none">
         <section class="wrapper">
-            <link href="https://wip.graspway.com/chat/chat-app/meetings/support.css" rel="stylesheet">
-            <script src="https://wip.graspway.com/chat/chat-app/meetings/index.js"></script>
+            <link href="${configuration_helpers.get_value('GW_PORTAL_URL', '')}chat/chat-app/meetings/support.css" rel="stylesheet">
+            <script src="${configuration_helpers.get_value('GW_PORTAL_URL', '')}chat/chat-app/meetings/index.js"></script>
             <div class="body" x-data="BBBIntegration()"
-                x-init="init('course-v1:default+ncrhijosa1+2021', 'https://wip.graspway.com/gwc')" x-cloak="">
+                x-init="init('${ course.id }', '${ configuration_helpers.get_value('GW_GCORE_URL', '') }')" x-cloak="">
                 <div class="topBar"> <span>Videoconferencia</span>
                     <div class="bg-blue-600 hover:bg-blue-800 newMeetingBtn" style="right:10px;top:10px"
                         @click="createMeetingBox" x-show="isStaff"> Crear una videoconferencia </div>
