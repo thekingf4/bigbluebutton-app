@@ -22,6 +22,6 @@ def bigbluebuttonapp_view(request, course_id):
         "course": course,
         "settings": settings,
         "dirs":  configuration_helpers.get_value('GW_PORTAL_URL', 'PORTAL_URL'),
-        "dirs2":  configuration_helpers.get_value('GW_GCORE_URL', 'G-CORE URL') ,
+        "dirs2":  configuration_helpers.get_value('GW_GCORE_URL', 'G-CORE_URL') ,
     }
     return render_to_response("bigbluebuttonapp/tab.html", context)
