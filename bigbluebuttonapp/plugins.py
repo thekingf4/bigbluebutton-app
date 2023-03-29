@@ -15,12 +15,13 @@ class BBBTab(EnrolledTab):
 
     @classmethod
     def is_enabled(cls, course, user=None):
+        """Returns true if this tab is enabled."""
+        return settings.FEATURES.get('NEW_TAB_ENABLED', False)
+        #if not super(BBBTab, cls).is_enabled(course, user=user):
+         #   return False
 
-        if not super(BBBTab, cls).is_enabled(course, user=user):
-            return False
+        #if user and not user.is_authenticated:
+        #    return False
 
-        if user and not user.is_authenticated:
-            return False
-
-        return True
+        #return True
 
